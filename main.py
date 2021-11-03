@@ -23,19 +23,19 @@ def translateEachTextToTarget(pagesOfText, target, outputfile):
 	start = time.time()
 	index = 1
 	total = 0
-	result_file = open(outputfile, "w")
+	result_file = open(outputfile, "w", -1, "utf-8")
 	translator = translate.Client()
 	for text in pagesOfText:
 		print("Page {}".format(index))
 		chars = len(text)
 		total += chars
 		print("Number of characters of current page: {}".format(chars))
-		print("Total chars so far (before reaching 100,000): {}".format(total))
-		if total >= 100000:
+		print("Total chars so far (before reaching 500,000): {}".format(total))
+		if total >= 500000:
 			end = time.time()
 			elapsed = end - start
 			diff = 100 - elapsed
-			print("Reached 100,000 in {} seconds!".format(elapsed))
+			print("Reached 500,000 in {} seconds!".format(elapsed))
 			if diff > 0:
 				print("Waiting {} seconds to continue".format(diff))
 				time.sleep(diff)
