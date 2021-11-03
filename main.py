@@ -3,7 +3,7 @@ import argparse
 import time
 
 # installed libraries
-from google.cloud import translate
+from google.cloud import translate_v2 as translate
 import pdftotext
 
 argparser = argparse.ArgumentParser()
